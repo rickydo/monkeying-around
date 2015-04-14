@@ -24,3 +24,11 @@ where:
 -H sends it a header to accept json
 -X to use HTTP request action
 -d data
+
+
+Authentication:
+
+curl \
+--basic \
+-u phil:catspaw \
+http://localhost:3000/api/todo_lists.json
