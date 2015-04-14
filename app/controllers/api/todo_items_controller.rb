@@ -18,6 +18,33 @@ class Api::TodoItemsController < ApplicationController
 		end
 	end
 
+	def update
+		item = @list.todo_items.find(params[:id])
+  		if list.update(item_params)
+  			render status: 200, json: {
+  				message: "item successfully updated",
+  				todo_list: @list,
+  				todo_item: item
+  			}.to_json
+
+  		else
+  			render status: 500, json: {
+  				message: "item could not be updated",
+  				errors: item.errors
+  			}.to_json
+  		end
+	end
+
+	def destroy
+		item = @list.todo_items.find(params[:id])
+  		item.destroy
+  		rendor status: 200, json: {
+  				message: "item successfully deleted from To-do List",
+  				todo_list: @list,
+  				todo_item: item
+  		}.to_json
+	end
+
 	private
 	def item_params
 		params.require("todo_item").permit("content")
