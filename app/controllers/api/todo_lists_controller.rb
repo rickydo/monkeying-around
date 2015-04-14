@@ -1,6 +1,5 @@
-class Api::TodoListsController < ApplicationController
-	skip_before_filter :verify_authenticity_token
-	# disable csrf for curl request otherwise it breaks 
+class Api::TodoListsController < Api::ApiController
+
 	def index
     	render json: TodoList.all
   	end

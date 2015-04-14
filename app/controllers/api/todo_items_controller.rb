@@ -1,5 +1,6 @@
-class Api::TodoItemsController < ApplicationController
-	skip_before_filter :verify_authenticity_token
+class Api::TodoItemsController < Api::ApiController
+	# double colons is a namespace resolution operator, it allows
+	# you to access items in modules or class level items in classes
 	before_filter :find_todo_list
 
 	def create
