@@ -1,6 +1,8 @@
 Odot::Application.routes.draw do
   namespace :api do
-    resources :todo_lists
+    resources :todo_lists do
+      resources :todo_lists, only: [:create, :update, :destroy]
+    end
   end
 
   get 'pages/home'
