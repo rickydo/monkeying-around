@@ -8,3 +8,5 @@ APIs don't exist in isolation. They expose functionality of an application or se
 
 Constraints:
 cacheable, uniform interface, layered system, code on demand, stateless, client-server relationship
+
+use curl <uri>.json in terminal to test api
