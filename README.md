@@ -20,7 +20,7 @@ curl \
 -d '{"title":"The will go here"}' http://localhost:3000/api/todo_lists
 
 where: 
--i tells it to include the header in the output
+-i tells it to include 
 -H sends it a header to accept json
--X to use HTTP request 
+-X to use HTTP request action
 -d data
