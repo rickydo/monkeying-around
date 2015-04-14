@@ -27,6 +27,24 @@ class Api::TodoListsController < ApplicationController
   		end
   	end
 
+  	def update
+  		list = TodoList.find(params[:id])
+  		if list.update(list_params)
+  			render json: {
+  				status: 200,
+  				message: "successfully updated",
+  				todo_list: list
+  			}.to_json
+
+  		else
+  			render json: {
+  				status: 500,
+  				message: "could not be updated",
+  				todo_list: list
+  			}.to_json
+  		end
+  	end
+
   	def destroy
   		list = TodoList.find(params[:id])
   		list.destroy
